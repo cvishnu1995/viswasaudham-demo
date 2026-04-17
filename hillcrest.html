@@ -146,23 +146,39 @@
 
         <!-- Customer Enquiry Form -->
         <div class="col-md-6">
+
           <h2>Property Requirements</h2>
-          <form action="https://docs.google.com/forms/d/e/1FAIpQLSeYJtZV3yt2esC4P0kYnUL5BonR1LYXZZBnKs3snvTbr6FvLA/formResponse" 
-                method="POST" target="_blank" style="max-width:100%; width:100%;">
-            <div class="mb-3">
-              <input type="text" name="entry.476983179" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" name="entry.764456207" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-              <input type="tel" name="entry.1007294441" class="form-control" placeholder="Your Phone Number" required>
-            </div>
-            <div class="mb-3">
-              <textarea name="entry.1587239838" class="form-control" placeholder="Property Requirements (e.g., 3BHK flat in Hyderabad)" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+<form id="enquiryForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYJtZV3yt2esC4P0kYnUL5BonR1LYXZZBnKs3snvTbr6FvLA/formResponse" 
+      method="POST" style="max-width:100%; width:100%;">
+  <div class="mb-3">
+    <input type="text" name="entry.476983179" class="form-control" placeholder="Your Name" required>
+  </div>
+  <div class="mb-3">
+    <input type="email" name="entry.764456207" class="form-control" placeholder="Your Email" required>
+  </div>
+  <div class="mb-3">
+    <input type="tel" name="entry.1007294441" class="form-control" placeholder="Your Phone Number" required>
+  </div>
+  <div class="mb-3">
+    <textarea name="entry.1587239838" class="form-control" placeholder="Property Requirements (e.g., 3BHK flat in Hyderabad)" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop default redirect
+  fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this)
+  }).then(() => {
+    alert("✅ Thank you! Your enquiry has been submitted.");
+    this.reset();
+  }).catch(() => {
+    alert("❌ There was an error submitting. Please try again.");
+  });
+});
+</script>
         </div>
 
       </div>
