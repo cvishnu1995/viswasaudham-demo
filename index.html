@@ -3,46 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Viswasaudham </title>
+  <title>Viswasaudham</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-<!-- Add your custom CSS here -->
-<style>
-  /* Project card images */
-  .project-img {
-    height: 400px;   /* fixed height */
-    width: 100%;     /* full width of card */
-    object-fit: cover; /* crop edges neatly */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  <!-- Add your custom CSS here -->
+  <style>
+    /* Project card images */
+    .project-img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  /* Hover effect for project cards */
-  .card:hover .project-img {
-    transform: scale(1.05); /* subtle zoom */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* shadow on hover */
-  }
-  
-  /* Smooth scroll for anchor links */
-  html {
-    scroll-behavior: smooth;
-  }
+    /* Hover effect for project cards */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
-  /* Footer social links alignment */
-  .footer-social a {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 15px;
-    text-decoration: none;
-    color: #000; /* black text, adjust if needed */
-  }
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .footer-social a:hover {
-    color: #0d6efd; /* Bootstrap primary blue on hover */
-  }
-</style>
+    /* Footer social links alignment */
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 15px;
+      text-decoration: none;
+      color: #000;
+    }
+    .footer-social a:hover {
+      color: #0d6efd;
+    }
 
-
+    /* Enable hover dropdown on desktop */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -51,41 +56,37 @@
     <p>Residential & Commercial Projects</p>
 
     <!-- Sub Header Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Viswasaudham</a>
-    <!-- Remove this line -->
-    <!-- <a class="navbar-brand" href="index.html">Viswasaudham</a> -->
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Removed unwanted brand link -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         
-        <!-- Projects Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown">
-            Projects
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="hillcrest.html">Hillcrest by Pacifica</a></li>
-            <li><a class="dropdown-item" href="ambience.html">Ambience Parkview</a></li>
-            <li><a class="dropdown-item" href="botanika.html">The Botanika Phase 2</a></li>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            
+            <!-- Projects Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                <li><a class="dropdown-item" href="hillcrest.html">Hillcrest by Pacifica</a></li>
+                <li><a class="dropdown-item" href="ambience.html">Ambience Parkview</a></li>
+                <li><a class="dropdown-item" href="botanika.html">The Botanika Phase 2</a></li>
+              </ul>
+            </li>
+            
+            <!-- Contact Us -->
+            <li class="nav-item">
+              <a class="nav-link" href="#footer-contact">Contact Us</a>
+            </li>
+            
           </ul>
-        </li>
-           
-        <!-- Contact Us -->
-        <li class="nav-item">
-          <a class="nav-link" href="#footer-contact">Contact Us</a>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!-- Project Cards -->
@@ -127,57 +128,59 @@
   </div>
 
   <!-- Footer -->
-<footer class="bg-light mt-5" id="footer-contact">
-  <div class="container py-5">
-    <div class="row">
-      
-      <!-- Contact Us Section -->
-      <div class="col-md-6 mb-4">
-        <h2>Contact Us</h2>
-        <p>📞 Phone: +91-9493005105</p>
-        <p>📧 Email: vsrini196405@gmail.com</p>
-        <p>🏢 Address: Viswasaudham Real Estate, Hyderabad, India</p>
-    <!-- Social Media Links -->
-<div class="mt-3">
-  <h5>Follow Us</h5>
-  <div class="d-flex flex-wrap">
-    <a href="https://facebook.com/viswasaudham" target="_blank" class="me-3"><i class="bi bi-facebook"></i>Facebook</a>
-    <a href="https://instagram.com/viswasaudham" target="_blank" class="me-3"><i class="bi bi-instagram"></i>Instagram</a>
-    <a href="https://linkedin.com/company/viswasaudham" target="_blank" class="me-3"><i class="bi bi-linkedin"></i>LinkedIn</a>
-    <a href="https://twitter.com/viswasaudham" target="_blank"><i class="bi bi-twitter"></i>Twitter</a>
-</div>
-</div>
-</div>      
-      <!-- Customer Enquiry Form -->
-      <div class="col-md-6">
-  <h2>Property Requirements</h2>
- <form action="https://docs.google.com/forms/d/e/1FAIpQLSeYJtZV3yt2esC4P0kYnUL5BonR1LYXZZBnKs3snvTbr6FvLA/formResponse" 
-      method="POST" target="_blank" style="max-width:100%; width:100%;">
-    <div class="mb-3">
-      <input type="text" name="entry.476983179" class="form-control" placeholder="Your Name" required>
-    </div>
-    <div class="mb-3">
-      <input type="email" name="entry.764456207" class="form-control" placeholder="Your Email" required>
-    </div>
-    <div class="mb-3">
-      <input type="tel" name="entry.1007294441" class="form-control" placeholder="Your Phone Number" required>
-    </div>
-    <div class="mb-3">
-      <textarea name="entry.1587239838" class="form-control" placeholder="Property Requirements (e.g., 3BHK flat in Hyderabad)" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+  <footer class="bg-light mt-5" id="footer-contact">
+    <div class="container py-5">
+      <div class="row">
+        
+        <!-- Contact Us Section -->
+        <div class="col-md-6 mb-4">
+          <h2>Contact Us</h2>
+          <p>📞 Phone: +91-9493005105</p>
+          <p>📧 Email: vsrini196405@gmail.com</p>
+          <p>🏢 Address: Viswasaudham Real Estate, Hyderabad, India</p>
+          <!-- Social Media Links -->
+          <div class="mt-3 footer-social">
+            <h5>Follow Us</h5>
+            <div class="d-flex flex-wrap">
+              <a href="https://facebook.com/viswasaudham" target="_blank" class="me-3"><i class="bi bi-facebook"></i> Facebook</a>
+              <a href="https://instagram.com/viswasaudham" target="_blank" class="me-3"><i class="bi bi-instagram"></i> Instagram</a>
+              <a href="https://linkedin.com/company/viswasaudham" target="_blank" class="me-3"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a href="https://twitter.com/viswasaudham" target="_blank"><i class="bi bi-twitter"></i> Twitter</a>
+            </div>
+          </div>
+        </div>      
 
+        <!-- Customer Enquiry Form -->
+        <div class="col-md-6">
+          <h2>Property Requirements</h2>
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSeYJtZV3yt2esC4P0kYnUL5BonR1LYXZZBnKs3snvTbr6FvLA/formResponse" 
+                method="POST" target="_blank" style="max-width:100%; width:100%;">
+            <div class="mb-3">
+              <input type="text" name="entry.476983179" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="entry.764456207" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" name="entry.1007294441" class="form-control" placeholder="Your Phone Number" required>
+            </div>
+            <div class="mb-3">
+              <textarea name="entry.1587239838" class="form-control" placeholder="Property Requirements (e.g., 3BHK flat in Hyderabad)" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+      </div>
     </div>
-  </div>
-  
-  <!-- Copyright -->
-  <div class="bg-dark text-white text-center py-3">
-    <p>&copy; 2026 Viswasaudham. All rights reserved.</p>
-  </div>
-</footer>
-<!-- Bootstrap JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Copyright -->
+    <div class="bg-dark text-white text-center py-3">
+      <p>&copy; 2026 Viswasaudham. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
