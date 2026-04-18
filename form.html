@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Google Form Submission</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    #thankyou_message {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="form_container" class="container mt-5">
+    <h2>Property Requirements</h2>
+    <form id="enquiryForm" 
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeYJtZV3yt2esC4P0kYnUL5BonR1LYXZZBnKs3snvTbr6FvLA/formResponse" 
+          method="POST" style="max-width:100%; width:100%;">
+      
+      <div class="mb-3">
+        <input type="text" name="entry.476983179" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" name="entry.764456207" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <input type="tel" name="entry.1007294441" class="form-control" placeholder="Your Phone Number" required>
+      </div>
+      <div class="mb-3">
+        <textarea name="entry.1587239838" class="form-control" placeholder="Property Requirements (e.g., 3BHK flat in Hyderabad)" rows="4" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Thank You Message -->
+  <div id="thankyou_message" class="container mt-5">
+    <div class="alert alert-success">
+      ✅ Thank you! Your enquiry has been submitted.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop normal redirect
+      const form = this;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      }).then(() => {
+        // Hide form, show thank-you
+        document.getElementById("form_container").style.display = "none";
+        document.getElementById("thankyou_message").style.display = "block";
+        form.reset();
+      }).catch(() => {
+        alert("❌ There was an error submitting. Please try again.");
+      });
+    });
+  </script>
+</body>
+</html>
